@@ -30,3 +30,8 @@ cd cyclic-redundancy-check
 ```
 
 * open DC1.html using any browser
+
+### Hosting Website
+* We have hosted the Web-based tool on our github.Please visit the below link to test it. <br />
+
+[https://sohamraje137.github.io](https://sohamraje137.github.io)

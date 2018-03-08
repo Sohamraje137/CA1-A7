@@ -4,7 +4,6 @@
 Web-based tool-CRC
 
 #### Team members
-<br />
 Bidyadhar Mohanty(16CO212)<br />
 Soham P. Patil (16CO249)<br />
 

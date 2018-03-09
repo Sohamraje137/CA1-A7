@@ -25,6 +25,8 @@ An web based tool for CRC codes<br />
 * ```t.html``` file contains a breif description of CRC.
 * ```t2.html``` file contaons a brief description of Property of Divisor.
 * ```t3.html``` file contains a brief description of 1-bit error checking code.
+### Input Parameters:
+
 ### To run the program:<br />
 * Run the command <br />
 ```

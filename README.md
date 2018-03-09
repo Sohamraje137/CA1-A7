@@ -19,6 +19,12 @@ The buttons on the navigation bar gives brief idea about CRC,Polynomials or divi
 For detailed reading a link is attached bellow it.<br />
 
 An web based tool for CRC codes<br />
+### Description of files: 
+* The was initially written in c++ files ```crc1.cpp``` ```2.crc2.cpp```
+* ```DC1.html``` file contains the main code as per the above logic .
+* ```t.html``` file contains a breif description of CRC.
+* ```t2.html``` file contaons a brief description of Property of Divisor.
+* ```t3.html``` file contains a brief description of 1-bit error checking code.
 ### To run the program:<br />
 * Run the command <br />
 ```

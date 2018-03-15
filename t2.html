@@ -6,7 +6,7 @@
 The most important attribute of the polynomial is its length (largest degree(exponent) +1 of any one term in the polynomial), because of its direct influence on the length of the computed check value.
 </font>
 <br>
-<font size="5">
+<font size="4">
    The design of the CRC polynomial depends on the maximum total length of the block to be protected (data + CRC bits), the desired error protection features, and the type of resources for implementing the CRC, as well as the desired performance. A common misconception is that the "best" CRC polynomials are derived from either irreducible polynomials or irreducible polynomials times the factor 1 + x, which adds to the code the ability to detect all errors affecting an odd number of bits. In reality, all the factors described above should enter into the selection of the polynomial and may lead to a reducible polynomial. However, choosing a reducible polynomial will result in a certain proportion of missed errors, due to the quotient ring having zero divisors.<p></p>
 The advantage of choosing a primitive polynomial as the generator for a CRC code is that the resulting code has maximal total block length in the sense that all 1-bit errors within that block length have different remainders (also called syndromes) and therefore, since the remainder is a linear function of the block, the code can detect all 2-bit errors within that block length. If 
 r is the degree of the primitive generator polynomial, then the maximal total block length is 2 r − 1, and the associated code is able to detect any single-bit or double-bit errors. We can improve this situation. If we use the generator polynomial 
@@ -16,7 +16,7 @@ A polynomial g ( x) that admits other factorizations may be chosen then so as to
 </font>
 <br>
 
-<p > <a style="background-color: white" href="http://computing.dcu.ie/~humphrys/Notes/Networks/data.polynomial.html"><font size="5">read more</font></a
+<p > <a style="background-color: white" href="http://computing.dcu.ie/~humphrys/Notes/Networks/data.polynomial.html"><font size="4">read more</font></a
 	</p>
 </h>
 </html>

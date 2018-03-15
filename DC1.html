@@ -2,6 +2,17 @@
 <!DOCTYPE>
 <html>
   <head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/typed.js/1.1.4/typed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <script type="text/javascript">
       function buttonClick(){
   //--------------code for sender side-------------------- 
@@ -507,7 +518,39 @@
        }
     }
     </script>
+    <!--About the tool-->
+<!-- <script type="text/javascript">
+//script for typed
+string="<strong>About Tool<strong>"+"<br>"+"The tool helps to get the codeword from a dataword and divisor,The sender side generates the code word according to the CRC algo(read Description) .On the reciever side a dataword is generated on the basis of the codeword and divisor .An 1 bit error detection algorithm(read 1-bit-error) also runs when we try to retireve the dataword ";
+  $(function(){
 
+        $(".write").typed({
+
+            strings: [string],
+
+            typeSpeed: 0.1,
+
+        });
+
+    });
+
+</script> -->
+<script type="text/javascript">
+//script for typed
+type="<strong>About Working<strong>"+"<br>"+"The tool helps to get the codeword from a dataword and divisor,The sender side generates the code word according to the CRC algo(read Description) .On the reciever side a dataword is generated on the basis of the codeword and divisor .An 1 bit error detection algorithm(read 1-bit-error) also runs when we try to retireve the dataword.";
+  $(function(){
+
+        $(".write").typed({
+
+            strings: [type],
+
+            typeSpeed: 0.1,
+
+        });
+
+    });
+
+</script>
   <!--   CSS -->
   <!-- Give styling to navigation bar add hover effects-->
     <style>
@@ -556,7 +599,6 @@ li a:hover {
   </div>
                 <!--Add sender and reciever beside each other-->
 
-  <div style="clear:both"></div>
    <div>
     <br>
   </div>
@@ -568,49 +610,92 @@ li a:hover {
 
 
 
+
+
+
     <div style="float:left; width: 50%">
     	     <!--Get dataword and divisor from sender side using html functions-->
-
-    <h2 align="center">Sender</h2>
-    <form name="form1">
-    	<!--Take input of Dataword-->
-
-      Binary coefficients: <input type="number" name="Binary" id="i0" > &nbsp;  &nbsp;  &nbsp;
-      <!--Take input of polynomial-->
-
-      Divisor:<input type="number" name="divisor" id="i1">
-      
-      <br><br><br><input type="button" value="submit" onclick="buttonClick()">
-     <br><br>
-     <br>
-     <p id="g"></p>
-    </form>
-   </div>
- </body>
-</body>
-</html>
+    <div style="background-color: black;color:white;border: solid 3px powderblue ;  padding: 10px 16px;  border-radius: 5px;">
+        <span class="tool"></span>
+         </div>
 
 
+            <h2 align="center">Sender</h2>
+
+     <div style="border: solid 3px black;    border-radius: 5px;  padding: 10px 16px;" >
+            <form name="form1" align="center">
+            	<!--Take input of Dataword-->
+         <br><br>
+              Dataword <input type="number" name="Binary" id="i0" > &nbsp;  &nbsp;  &nbsp;
+              <!--Take input of polynomial-->
+
+              Divisor:<input type="number" name="divisor" id="i1">
+              
+              <br><br><br><input type="button" value="submit" onclick="buttonClick()">
+             <br><br>
+             <br>
+
+            </form>
+         
+          <div  style="border: solid 3px black;background-color: grey;  padding: 10px 16px;border-radius: 5px;" >
+             <h><strong>Result:</strong></h>
+              <p  style="font-size: 15px;" id="g"></p>
+           </div>
+           </div>
+    </div>
+                        
+
+        
+
+<script type="text/javascript">
+// type2=Tool <br>At the sender side enter the dataword to be transmitted with the divisor. The codeword will be produced by the tool<br>On the Receiver side enter the codeword with the divisor. The tool displays the dataword .If we introduce a one bit error the tool will identify it.If more error is added the tool displlays the same; 
+$(function(){
+
+        $(".tool").typed({
+
+            strings: ["<strong>Tool Usage<strong> <br>At the sender side enter the dataword to be transmitted with the divisor. The codeword will be produced by the tool<br>On the Receiver side enter the codeword with the divisor. The tool displays the dataword .If we introduce a one bit error the tool will identify it.If more error is added the tool displlays the same; "],
+
+            typeSpeed: 1,
+
+        });
+
+    });
+
+</script>
 
 
 
     <div style="float:right; width: 50%">
+    
+
+
+            <div style="background-color: black;color:white;border: solid 3px powderblue;    border-radius: 5px;
+   padding: 10px 16px;">
+        <span class="write"></span>
+         </div>
      <h2 align="center">Receiver</h2>
+    <div style="border: solid 3px black;   padding: 10px 16px;   border-radius: 5px;" >
     <form>
     	   <!--Get codeword and divisor from receiver side using html functions-->
+         <br><br>
 
-      Binary coefficients: <input type="number" name="Binary" id="i10"> &nbsp;  &nbsp;  &nbsp;
+      Codeword <input type="number" name="Binary" id="i10"> &nbsp;  &nbsp;  &nbsp;
 
       Divisor:<input type="number" name="divisor" id="i11">
       
       
       <br><br><br><input type="button" value="submit" onclick="buttonClick2()">
-     <br><br>
+    </form>
      <br>
-     <p id="k"></p>
-     <p id="l"></p>
+     
 
     </form>
+    <br>
+    <div style="border: solid 3px black; background-color: grey ; font-size: 15px;  padding: 10px 16px; border-radius: 5px;"> 
+         <h><strong>Result:</strong></h>
+      <p  style="font-size: 15px;" id="k"></p>
+     <p id="l"></p>
+   </div>
    </div>
   
 

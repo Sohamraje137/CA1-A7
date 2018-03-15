@@ -1,5 +1,5 @@
 <html>
-<body style="background-color: grey  ">
+<body style="background-color: #E0E0E0  ">
 	<h><font size="4">
    A <strong>cyclic redundancy check (CRC)</strong> is an error-detecting code commonly used in digital networks and storage devices to 
 detect accidental changes to raw data. Blocks of data entering these systems get a short check value attached, based on the remainder of a 
@@ -14,7 +14,68 @@ algorithm is based on cyclic codes. CRCs are popular because they are simple to 
 <font size="4">
     The CRC was invented by W. Wesley Peterson in 1961; the 32-bit CRC function of Ethernet and many other standards is the work of several 
 esearchers and was published in 1975.
+<p>
+	<strong> The various steps followed in the CRC method are</strong><br>
 
+1. A string of n as is appended to the data unit. The length of predetermined divisor is n+ 1.<br>
+
+2. The newly formed data unit i.e. original data + string of n as are divided by the divisor using binary division and remainder is obtained. <br>This remainder is called CRC.<br>
+
+                    <br>      
+                          <img src="Senderside.jpg" alt="CRC generator at sender side" width="500" height="300">
+                         
+<br>
+<br>3. Now, string of n Os appended to data unit is replaced by the CRC remainder (which is also of n bit).
+<br>
+4. The data unit + CRC is then transmitted to receiver.
+<br>
+5. The receiver on receiving it divides data unit + CRC by the same divisor and checks the remainder.
+<br>
+6. If the remainder of division is zero, receiver assumes that there is no error in data and it accepts it.
+<br>
+7. If remainder is non-zero then there is an error in data and receiver rejects it.
+<br>
+ For example, if data to be transmitted is 1001 and predetermined divisor is 1011. The procedure given below is used:
+<br>
+1. String of 3 zeroes is appended to 1011 as divisor is of 4 bits. Now newly formed data is 1011000.
+<br>
+                       
+   <br>      
+                          <img src="receiverside.jpg" alt="CRC checker at receiver side" width="500" height="300">
+                         
+<br>
+1. Data unit 1011000 is divided by 1011.
+<br>
+ <br>      
+                          <img src="generator.jpg" alt="CRC generated (Binary-division)" width="500" height="300">
+                         
+<br>
+                                
+<br>
+2. During this process of division, whenever the leftmost bit of dividend or remainder is 0, we use a string of Os of same length as divisor.<br> Thus in this case divisor 1011 is replaced by 0000.
+<br>
+3. At the receiver side, data received is 1001110.
+<br>
+4. This data is again divided by a divisor 1011.
+<br>
+5. The remainder obtained is 000; it means there is no error.
+<br>
+                               <br>      
+                          <img src="decode.jpg" alt="CRC generated (Binary-division)" width="500" height="300">
+                         
+<br> 
+
+<br><br>
+ CRC can detect all the burst errors that affect an odd number of bits.
+<br>
+ The probability of error detection and the types of detectable errors depends on the choice of divisor.
+<br>
+ Thus two major requirement of CRC are:
+<br>
+(a) CRC should have exactly one bit less than divisor.
+<br>
+(b) Appending the CRC to the end of the data unit should result in the bit sequence which is exactly divisib
+</p	>
 </font>
 <p > <a style="background-color: white" href="http://ecomputernotes.com/computernetworkingnotes/communication-networks/cyclic-redundancy-check"><font size="5">read more</font></a
 	</p>

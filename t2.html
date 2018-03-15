@@ -1,6 +1,6 @@
 <html>
-<body style="background-color: grey  ">
-	<h><font size="5">
+<body style="background-color: E0E0E0  ">
+	<h><font size="4">
     <strong>Cyclic Redundancy Check Polynomial</strong> <p></p>
     The selection of the generator polynomial is the most important part of implementing the CRC algorithm. The polynomial must be chosen to maximize the error-detecting capabilities while minimizing overall collision probabilities.<p></p>
 The most important attribute of the polynomial is its length (largest degree(exponent) +1 of any one term in the polynomial), because of its direct influence on the length of the computed check value.
@@ -8,10 +8,14 @@ The most important attribute of the polynomial is its length (largest degree(exp
 <br>
 <font size="4">
    The design of the CRC polynomial depends on the maximum total length of the block to be protected (data + CRC bits), the desired error protection features, and the type of resources for implementing the CRC, as well as the desired performance. A common misconception is that the "best" CRC polynomials are derived from either irreducible polynomials or irreducible polynomials times the factor 1 + x, which adds to the code the ability to detect all errors affecting an odd number of bits. In reality, all the factors described above should enter into the selection of the polynomial and may lead to a reducible polynomial. However, choosing a reducible polynomial will result in a certain proportion of missed errors, due to the quotient ring having zero divisors.<p></p>
-The advantage of choosing a primitive polynomial as the generator for a CRC code is that the resulting code has maximal total block length in the sense that all 1-bit errors within that block length have different remainders (also called syndromes) and therefore, since the remainder is a linear function of the block, the code can detect all 2-bit errors within that block length. If 
-r is the degree of the primitive generator polynomial, then the maximal total block length is 2 r − 1, and the associated code is able to detect any single-bit or double-bit errors. We can improve this situation. If we use the generator polynomial 
-g ( x ) = p ( x ) ( 1 + x ) , where p ( x )  is a primitive polynomial of degree r − 1, then the maximal total block length is 2 r − 1 − 1, and the code is able to detect single, double, triple and any odd number of errors.
+The advantage of choosing a primitive polynomial as the generator for a CRC code is that the resulting code has maximal total block length in the sense that all 1-bit errors within that block length have different remainders (also called syndromes) and therefore, since the remainder is a linear function of the block, the code can detect all 2-bit errors within that block length. If r is the degree of the primitive generator polynomial, then the maximal total block length is 2 r − 1, and the associated code is able to detect any single-bit or double-bit errors. We can improve this situation. If we use the generator polynomial 
+g ( x ) = p ( x ) ( 1 + x ) , where p ( x )  is a primitive polynomial of degree r − 1, then the maximal total block length is 2 r − 1 − 1, and the code is able to detect single, double, triple and any odd number of errors.<br>
+<strong>Standard Polynomials</strong>
 
+  <br>      
+                          <img src="Polynomials-standard.jpg"" alt="Standard Polynomials" width="600" height="250" ; align="self-center">
+                         
+<br> 
 A polynomial g ( x) that admits other factorizations may be chosen then so as to balance the maximal total blocklength with a desired error detection power. The BCH codes are a powerful class of such polynomials. They subsume the two examples above. Regardless of the reducibility properties of a generator polynomial of degree r, if it includes the "+1" term, the code will be able to detect error patterns that are confined to a window of r contiguous bits. These patterns are called "error bursts".
 </font>
 <br>

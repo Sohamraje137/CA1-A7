@@ -61,7 +61,7 @@
             var j;
          var string2=" ";
        
-
+        var string5=" "
         var string="";
 
 //-----------add zero's at the end as per the divisor-----------//
@@ -166,14 +166,14 @@
                                    }
     //------------------------do XOR between the zero and dataword------------------// 
 
-              for(j=0;j<l2;j++)
-              {
-                a[i+j]=a[i+j]^0;
-                  string+=""+a[i+j];
-              }
-            }
-          }
-
+                      for(j=0;j<l2;j++)
+                      {
+                        a[i+j]=a[i+j]^0;
+                          string+=""+a[i+j];
+                      }
+             }
+          
+        }
     //-------------------------------Remainder ready----------------------------------//
 
     //---------------------------copy the remainder beside the dataword---------------//
@@ -182,18 +182,22 @@
                 a1[i]=a[i];
             }
     //------------------------------codeword ready--------------------------------------//
-      string+="<br> The code word is :";
-            for(i=0;i<a.length;i++)
+        string+="<br> The code word is :";
+        string5+="<br> The code word is :";
+              for(i=0;i<a.length;i++)
             {
              string+=" "+a1[i];
+             string5+=" "+a1[i];
             }
-          }
-    //-----------------------------pass String to html code-------------------------------//
-                      document.getElementById("g").innerHTML=string
-        }
-    
-      
           
+    //-----------------------------pass String to html code-------------------------------//
+                      document.getElementById("g").innerHTML=string; 
+                     document.getElementById("result1").innerHTML=string5;
+                     document.getElementById("result1").style.visibility='visible';
+}
+
+
+}
      function buttonClick2(){
   //--------------code for reciever side-------------------- 
  
@@ -211,7 +215,8 @@
         var l,m,n,o;
  //--------------------convert the string entered to int value------------------------------//
 
-        var l = parseInt(x)
+        var l = parseInt(x)   
+
         var m = parseInt(y)
      
             var l1=x.length
@@ -241,7 +246,7 @@
                 }
                  
             var j,k;
-            var string=" ",t,string2=" ",string3=" ";
+            var string=" ",t,string2=" ",string3=" ",string4=" ";
 
   //----------------------------------------check feilds are blank it is blank------------------------//
 
@@ -359,9 +364,11 @@
     //----------------------------If remainder is zero display the dataword-------------------//
               if(count1==l2-1){
                 string+="<br> The data word is :";
+                string4+="<br> The data word is :";
                 for(i=0;i<l1-l2+1;i++)
                 {
                 string+=" "+a1[i];
+                string4+=" "+a1[i];
                 }
              }
     //-------------------------------If remainder is not zero-------------------------------------//
@@ -371,6 +378,7 @@
                 for(i=l1-l2+1;i<l1;i++){
                   string+=" "+a[i];
                 }
+                c1=0;
     //-----------------------------try to check if there is a 1-bit error-------------------------//
                do{
                     count5=0;
@@ -397,7 +405,6 @@
                 {               
      //            	            string3+=" "+"<br>"
      // //-------------------------add spaces to indendate output--------------------------//
-
      //                              for( t=0;t<k;t++)
      //                               {
      //                                string3+="\xa0\xa0";
@@ -495,27 +502,35 @@
     //--------------------------Check if remainder is zero---------------------------------------//
                   if(count5==l2-1)
                   {               
-
-                    string3+="<br>The correct dataword may be:\xa0";
-                    
+                    c1++;
+                    //string3+="<br>The correct dataword may be:\xa0";
+                    c=1;
                         for(k=0;k<l1-l2+1;k++)
                         {
                            string3+=" "+a3[k];
                         }            
-                           c=1;
-                          string+=string3;
+                         string3+=","
                          }
 
-             }while(c!=1 &&count2<=l1);
+             }while(count2<=l1);
+             if(c==1)
+            {  string+="<br>The correct dataword may be:\xa0" ;
+            string+=string3.slice(0,string3.length -1);
+            string4="<br>The correct dataword may be:\xa0" ;
+            string4+=string3.slice(0,string3.length -1);
+           }
            if(c==0)
-            string+="More than 1 bit error...";          
+            string+="<br> More than 1 bit error...";          
          }
             
-          
+       }   
               
-               document.getElementById("k").innerHTML=string
- 
-       }
+               document.getElementById("k").innerHTML=string;
+               document.getElementById("result").innerHTML=string4;
+               document.getElementById("result").style.visibility = 'visible';
+       
+     
+   
     }
     </script>
     <!--About the tool-->
@@ -530,7 +545,7 @@ string="<strong>About Tool<strong>"+"<br>"+"The tool helps to get the codeword f
 
             typeSpeed: 0.1,
 
-        });
+        });5
 
     });
 
@@ -628,14 +643,14 @@ li a:hover {
             <form name="form1" align="center">
             	<!--Take input of Dataword-->
          <br><br>
-              Dataword <input type="number" name="Binary" id="i0" > &nbsp;  &nbsp;  &nbsp;
+              Dataword <input type="number" name="Binary" id="i0"  > &nbsp;  &nbsp;  &nbsp;
               <!--Take input of polynomial-->
 
               Divisor:<input type="number" name="divisor" id="i1">
               
               <br><br><br><input type="button" value="submit" onclick="buttonClick()">
-             <br><br>
-             <br>
+              <br><br>
+                   <br><p id="result1" style="border: solid 3px black;background-color: #E0E0E0;  padding: 5px 10px;border-radius: 5px;visibility: hidden"></p>
 
             </form>
          
@@ -683,17 +698,15 @@ $(function(){
 
       Codeword <input type="number" name="Binary" id="i10"> &nbsp;  &nbsp;  &nbsp;
 
-      Divisor:<input type="number" name="divisor" id="i11">
+      Divisor:<input type="number" name="divisor" id="i11" >
       
       
       <br><br><br><input type="button" value="submit" onclick="buttonClick2()">
-    </form>
-     <br>
-     
+     <br><br><br>
+     <p id="result" style="border: solid 3px black;background-color: #E0E0E0;  padding: 5px 10px;border-radius: 5px;visibility: hidden"></p>
 
     </form>
-    <br>
-    <div style="border: solid 3px black; background-color: #E0E0E0 ; font-size: 15px;  padding: 10px 16px; border-radius: 5px;"> 
+       <div style="border: solid 3px black; background-color: #E0E0E0 ; font-size: 15px;  padding: 10px 16px; border-radius: 5px;"> 
          <h><strong>Result:</strong></h>
       <p  style="font-size: 15px;" id="k"></p>
      <p id="l"></p>

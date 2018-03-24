@@ -41,7 +41,7 @@
                   a1[i]=a[i];
                   if(a[i]>1 || a[i]<0)
                    {                      
-                   	  alert("Enter an valid binary digit");
+                      alert("Enter an valid binary digit");
                       return ;
                    }
                   l=l/10;
@@ -258,7 +258,7 @@
  
           for(i=0;i<l1-l2+1;i++)
           {
-                          			string+=" "+"<br>"
+                                string+=" "+"<br>"
      //-------------------------add spaces to indendate output--------------------------//
 
                                   for( t=0;t<i;t++)
@@ -301,7 +301,7 @@
                                    }
                                    string+="<br>";
      //-------------------------add spaces to indendate output--------------------------//
-								 for( t=0;t<i;t++)
+                 for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }    
@@ -403,7 +403,7 @@
     //------------------Use the same code to check the remainder is zero as above-----------------//
                 for(k=0;k<l1-l2+1;k++)
                 {               
-     //            	            string3+=" "+"<br>"
+     //                         string3+=" "+"<br>"
      // //-------------------------add spaces to indendate output--------------------------//
      //                              for( t=0;t<k;t++)
      //                               {
@@ -424,7 +424,7 @@
      //                               }
                     if(a1[k]==1)
                     {
-     //                	            for( t=0;t<l2;t++)
+     //                             for( t=0;t<l2;t++)
      //                               {
      //                                string3+=""+p[t];
      //                               }
@@ -443,13 +443,13 @@
      //                               }
      //                               string3+="<br>";
      // //-------------------------add spaces to indendate output--------------------------//
-					// 			 for( t=0;t<k;t++)
+          //       for( t=0;t<k;t++)
      //                               {
      //                                string3+="\xa0\xa0";
      //                               }    
                       for(j=0;j<l2;j++)
                       {
-                      	 // string3+="\xa0\xa0"+a1[j]+" ^ "+p[j];
+                         // string3+="\xa0\xa0"+a1[j]+" ^ "+p[j];
                         a1[j+k]=a1[j+k]^p[j]
 
                       //  string3+=a1[j]+"";   
@@ -509,7 +509,7 @@
                         {
                            string3+=" "+a3[k];
                         }            
-                         string3+=","
+                         string3+= "\xa0" +" ,"
                          }
 
              }while(count2<=l1);
@@ -520,7 +520,8 @@
             string4+=string3.slice(0,string3.length -1);
            }
            if(c==0)
-            string+="<br> More than 1 bit error...";          
+            string+="<br> More than 1 bit error...";         
+            string4="<br> More than 1 bit error.."; 
          }
             
        }   
@@ -631,7 +632,7 @@ li a:hover {
 
 
     <div style="float:left; width: 50%">
-    	     <!--Get dataword and divisor from sender side using html functions-->
+           <!--Get dataword and divisor from sender side using html functions-->
     <div style="background-color: black;color:white;border: solid 3px powderblue ;  padding: 10px 16px;  border-radius: 5px;">
         <span class="tool"></span>
          </div>
@@ -641,7 +642,7 @@ li a:hover {
 
      <div style="border: solid 3px black;    border-radius: 5px;  padding: 10px 16px;" >
             <form name="form1" align="center">
-            	<!--Take input of Dataword-->
+              <!--Take input of Dataword-->
          <br><br>
               Dataword <input type="number" name="Binary" id="i0"  > &nbsp;  &nbsp;  &nbsp;
               <!--Take input of polynomial-->
@@ -693,7 +694,7 @@ $(function(){
      <h2 align="center">Receiver</h2>
     <div style="border: solid 3px black;   padding: 10px 16px;   border-radius: 5px;" >
     <form>
-    	   <!--Get codeword and divisor from receiver side using html functions-->
+         <!--Get codeword and divisor from receiver side using html functions-->
          <br><br>
 
       Codeword <input type="number" name="Binary" id="i10"> &nbsp;  &nbsp;  &nbsp;
